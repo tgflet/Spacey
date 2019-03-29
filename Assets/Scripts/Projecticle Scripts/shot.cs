@@ -29,7 +29,7 @@ public class shot : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Base"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

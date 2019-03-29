@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8758852524904446634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shotspawn
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7401695422282674864}
   - component: {fileID: 7401695422282674867}
   - component: {fileID: 7401695422282674868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -199,6 +199,9 @@ MonoBehaviour:
   downward: {x: 0, y: -20, z: 0}
   active: 0
   attack_Timer: 0.35
+  current_Attack_Timer: 0
+  canAttack: 0
+  player: {fileID: 7634294993928224419, guid: 7985d10e848b2401186105a4395e83da, type: 3}
   enemy_Shot: {fileID: 3743455812621782166, guid: a58a8e94377f443f2aaaf14071fe6e29,
     type: 3}
   shotSpawn: {fileID: 8758852524904446634}

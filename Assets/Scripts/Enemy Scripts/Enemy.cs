@@ -12,14 +12,13 @@ public class Enemy : MonoBehaviour
     public bool dextrous;
     public Vector3 downward;
     public bool active;
-    SpriteRenderer enemy_SpriteRenderer;
+    private SpriteRenderer enemy_SpriteRenderer;
     public float attack_Timer = 20f;
-    private float current_Attack_Timer;
-    private bool canAttack;
-    [SerializeField]
-    private GameObject enemy_Shot;
-    [SerializeField]
-    private Transform shotSpawn;
+    public float current_Attack_Timer;
+    public bool canAttack;
+ 
+    public GameObject enemy_Shot;
+    public Transform shotSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +26,17 @@ public class Enemy : MonoBehaviour
         dextrous = true;
         active = false;
         enemy_SpriteRenderer = GetComponent<SpriteRenderer>();
-        enemy_SpriteRenderer.color = Color.white;  
+        enemy_SpriteRenderer.color = Color.white;
+        PointValue = 30;  
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (transform.position.y <= -3.45)
+        {
+            GameOver.isFailure = true;
+        }
         Attack();
         if (active)
         {
@@ -92,7 +96,21 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-       
+        if (other.gameObject.CompareTag("PlayerShot"))
+        {
+            Destroy(gameObject);
+            Player.Score += PointValue;
+            Destroy(other.gameObject);
+
+        }
+        if (other.gameObject.CompareTag("Base"))
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            GameOver.isFailure = true;
+        }
     }
     void DeactivateGameObject()
     {

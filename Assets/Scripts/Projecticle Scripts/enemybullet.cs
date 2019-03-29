@@ -29,7 +29,7 @@ public class enemybullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Base"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

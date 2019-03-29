@@ -28,6 +28,10 @@ public class Horde : MonoBehaviour
                 select.active = true;
             }
         }
+        if(Swarm.childCount == 0)
+        {
+            WinText.isWinner = true;
+        }
     }
     private void FixedUpdate()
     {

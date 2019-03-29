@@ -11,6 +11,8 @@ TagManager:
   - Left
   - PlayerShot
   - Enemy
+  - Base
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Bounce
   - 
   - 
   - 
